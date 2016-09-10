@@ -11,6 +11,8 @@ pipeline:
     image: node:${NODE_VERSION}
     environment:
       - NPM_CONFIG_LOGLEVEL=silent
+      - NSL_LEVEL=5
+      - DEBUG=*
     commands:
       - npm install
       - npm test
