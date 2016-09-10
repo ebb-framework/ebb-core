@@ -23,4 +23,11 @@ export default class PromiseEmitter {
       this.eventMap[eventName] = [];
     }
   }
+
+  /**
+   * Get the defined events for this instance.
+   */
+  getDefinedEvents() {
+    return Object.keys(this.eventMap).sort();
+  }
 }
