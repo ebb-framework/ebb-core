@@ -26,6 +26,9 @@ The use of these as opposed to pure Node promises or async-to-generator was
 made in the interests of raw performance. Code that is 'sometimes async' such
 as potentially cached schema lookups benefits heavily from these changes.
 
+__Note:__ The packaged content for NPM is the babel output, and all build process
+intermediates/source files are excluded from the packaging.
+
 ### Unit Testing
 Every line, branch and condition needs to be tested to be part of the core project.
 Whilst we may flex this requirement in the future, the expectation is that 100% coverage
