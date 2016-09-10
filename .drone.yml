@@ -1,4 +1,11 @@
 debug: true
+compose:
+  kafka_instance:
+    image: flozano/kafka_instance
+    environment:
+      - _KAFKA_advertised_host_name=localhost
+      - _KAFKA_advertised_port=9092
+
 pipeline:
   run_node_build:
     image: node:${NODE_VERSION}
