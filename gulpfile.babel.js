@@ -23,6 +23,7 @@ gulp.task('lint', () =>
 
 gulp.task('test', ['lint'], () =>
   gulp.src('./test/**/*.spec.js', { read: false })
-    .pipe(mocha()));
+    .pipe(mocha())
+    .on('error', () => process.exit(-1)));
 
 gulp.task('default', ['lint', 'babel', 'test']);
