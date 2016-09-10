@@ -1,6 +1,9 @@
 ![Project Logo](docs/images/logo.png)
 
 # ebb
+[![Build Status](http://drone.eventualconsistency.net/api/badges/ebb-framework/ebb-core/status.svg)](http://drone.eventualconsistency.net/ebb-framework/ebb-core)
+[![Code Coverage](http://aircover.eventualconsistency.net/badges/ebb-framework/ebb-core/coverage.svg)](http://aircover.eventualconsistency.net/ebb-framework/ebb-core)
+
 The ebb project is a messaging framework that allows for handling of streams of
 varied message types. The framework can be extended with new serialization formats
 and transports. The core goals of this project are to support the easy development
