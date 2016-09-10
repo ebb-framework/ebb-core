@@ -108,7 +108,7 @@ describe('Matrix Testing', () => {
               formatter,
               testLabel,
             };
-          }).timeout(15000);
+          });
 
           afterEach(async () => {
             if (!context) {
