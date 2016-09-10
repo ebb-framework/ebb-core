@@ -168,4 +168,4 @@ describe('Matrix Testing', () => {
       }
     });
   }
-});
+}).timeout(60000);
