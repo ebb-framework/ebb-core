@@ -1,7 +1,7 @@
 debug: true
 services:
   kafka_instance:
-    image: flozano/kafka_instance
+    image: flozano/kafka
     environment:
       - _KAFKA_advertised_host_name=localhost
       - _KAFKA_advertised_port=9092
