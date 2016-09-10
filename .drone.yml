@@ -1,5 +1,13 @@
 debug: true
 pipeline:
+  run_node_build:
+    image: node:${NODE_VERSION}
+    environment:
+      - NPM_CONFIG_LOGLEVEL=silent
+    commands:
+      - npm install
+      - npm test
+
   run_flow_checks:
     image: netproteus/flowtype:0.30.0
     commands:
@@ -9,13 +17,6 @@ pipeline:
       matrix:
         NODE_VERSION: 6
 
-  run_node_build:
-    image: node:${NODE_VERSION}
-    environment:
-      - NPM_CONFIG_LOGLEVEL=silent
-    commands:
-      - npm install
-      - npm test
 
   apply_npm_version:
     image: node:${NODE_VERSION}
