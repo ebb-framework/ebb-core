@@ -1,0 +1,20 @@
+debug: true
+pipeline:
+  run_flow_checks:
+    image: netproteus/flowtype:0.30.0
+    commands:
+      - flow version
+      - flow check
+  run_node_build:
+    image: node:${NODE_VERSION}
+    environment:
+      - NPM_CONFIG_LOGLEVEL=silent
+    commands:
+      - npm install
+      - npm test
+
+matrix:
+  NODE_VERSION:
+    - 6
+    - 5
+    - 4
