@@ -1,5 +1,5 @@
 debug: true
-compose:
+services:
   kafka_instance:
     image: flozano/kafka_instance
     environment:
