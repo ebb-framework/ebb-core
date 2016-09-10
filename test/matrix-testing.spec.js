@@ -78,7 +78,11 @@ describe('Matrix Testing', () => {
           });
         });
 
-        describe(`Provider=${providerName}`, () => {
+        describe(`Provider=${providerName}`, function runTests() {
+          // Default the timeout to 15 seconds, because the first-time provider
+          // setup might be slow.
+          this.timeout(15000);
+
           let context : MatrixTestContext | null;
 
           // Set up permutations
