@@ -10,9 +10,8 @@ pipeline:
   run_node_build:
     image: node:${NODE_VERSION}
     environment:
-      - NPM_CONFIG_LOGLEVEL=silent
+      - NPM_CONFIG_LOGLEVEL=info
       - NSL_LEVEL=5
-      - DEBUG=*
     commands:
       - npm install
       - npm test
