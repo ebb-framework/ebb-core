@@ -5,6 +5,10 @@ pipeline:
     commands:
       - flow version
       - flow check
+    when:
+      matrix:
+        NODE_VERSION: 6
+
   run_node_build:
     image: node:${NODE_VERSION}
     environment:
@@ -12,6 +16,29 @@ pipeline:
     commands:
       - npm install
       - npm test
+
+  apply_npm_version:
+    image: node:${NODE_VERSION}
+    commands:
+      - git config --global user.name "Drone CI"
+      - git config --global user.email "drone@eventualconsistency.net"
+      - npm version ${DRONE_TAG} || true
+    when:
+      event: tag
+
+  publish_coverage:
+    image: plugins/coverage
+    pattern: coverage/lcov.info
+    when:
+      matrix:
+        NODE_VERSION: 6
+
+  deploy_npm_package:
+    image: plugins/npm
+    when:
+      event: tag
+      matrix:
+        NODE_VERSION: 6
 
 matrix:
   NODE_VERSION:
