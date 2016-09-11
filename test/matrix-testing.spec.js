@@ -145,9 +145,9 @@ describe('Matrix Testing', () => {
               context.formatterContext.generateSampleMessage(0),
           ));
 
-          // Test 03: Should send at least 5k messages/sec
+          // Test 03
           const rateBlindSend = 5000;
-          it(`Performance - Send at least ${rateBlindSend} messages/sec`, async () => {
+          it(`Performance - Send at least ${rateBlindSend} messages in under 10 seconds.`, async () => {
             const sequence = Array.from(Array(rateBlindSend).keys());
             await bluebird.map(sequence, (x) =>
               context.producer.write(
@@ -156,14 +156,14 @@ describe('Matrix Testing', () => {
           }).timeout(10000);
 
           const rateSendRecieve = 1000;
-          it(`Performance - Send/Recieve ${rateSendRecieve} messages/sec`, async () => {
+          it(`Performance - Send/Recieve ${rateSendRecieve} messages in under 10 seconds`, async () => {
             const sequence = Array.from(Array(rateBlindSend).keys());
             await bluebird.map(sequence, (x) =>
               context.producer.write(
                 context.formatterContext.getSampleMessageType(),
                 context.formatterContext.generateSampleMessage(x)));
             await bluebird.delay(3000);
-          }).timeout(5000);
+          }).timeout(10000);
         });
       }
     });
