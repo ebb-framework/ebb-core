@@ -7,13 +7,19 @@ services:
       - _KAFKA_advertised_port=9092
 
 pipeline:
-  run_node_build:
+  npm_install:
     image: node:${NODE_VERSION}
     environment:
       - NPM_CONFIG_LOGLEVEL=silent
       - NSL_LEVEL=5
     commands:
       - npm install
+
+  npm_test:
+    image: node:${NODE_VERSION}
+    environment:
+      - NSL_LEVEL=5
+    commands:
       - npm test
 
   run_flow_checks:
