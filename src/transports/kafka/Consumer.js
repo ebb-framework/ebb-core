@@ -43,7 +43,7 @@ export default class KafkaConsumer extends ConsumerBase {
       strategy: 'GroupConsumerStrategy',
       subscriptions: [this.options.topic],
       handler: (msgSet, topic, partition) =>
-        this.handleMessageSet(msgSet, topic, partition),
+        KafkaConsumer.handleMessageSet(msgSet, topic, partition),
     };
     const strategies = [strategy];
 
@@ -55,7 +55,7 @@ export default class KafkaConsumer extends ConsumerBase {
    * Handle a set of messages from Kafka
    * @private
    */
-  async handleMessageSet(
+  static async handleMessageSet(
     msgSet : Array<Message>,
     topic : Message,
     partition : number) : Promise<*> {
