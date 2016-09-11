@@ -147,7 +147,7 @@ describe('Matrix Testing', () => {
 
           // Test 03
           const rateBlindSend = 5000;
-          it(`Performance - Send at least ${rateBlindSend} messages in under 10 seconds.`, async () => {
+          it(`Performance - Send at least ${rateBlindSend} messages in under 10s`, async () => {
             const sequence = Array.from(Array(rateBlindSend).keys());
             await bluebird.map(sequence, (x) =>
               context.producer.write(
@@ -156,7 +156,7 @@ describe('Matrix Testing', () => {
           }).timeout(10000);
 
           const rateSendRecieve = 1000;
-          it(`Performance - Send/Recieve ${rateSendRecieve} messages in under 10 seconds`, async () => {
+          it(`Performance - Send/Recieve ${rateSendRecieve} messages in under 10s`, async () => {
             const sequence = Array.from(Array(rateBlindSend).keys());
             await bluebird.map(sequence, (x) =>
               context.producer.write(
