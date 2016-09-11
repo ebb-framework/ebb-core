@@ -1,5 +1,5 @@
 {
-  "name": "ebb-core",
+  "name": "ebb",
   "version": "0.0.1",
   "description": "High performance multi-consumer messaging framework.",
   "main": "index.js",
