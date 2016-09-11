@@ -3,6 +3,12 @@
 # ebb
 [![Build Status](http://drone.eventualconsistency.net/api/badges/ebb-framework/ebb-core/status.svg)](http://drone.eventualconsistency.net/ebb-framework/ebb-core)
 [![Code Coverage](http://aircover.eventualconsistency.net/badges/ebb-framework/ebb-core/coverage.svg)](http://aircover.eventualconsistency.net/ebb-framework/ebb-core)
+[![npm version](https://badge.fury.io/js/ebb-core.svg)](https://badge.fury.io/js/ebb-core)
+[![Prod Dependencies](https://david-dm.org/ebb-framework/ebb-core/status.svg)](https://david-dm.org/ebb-framework/ebb-core)
+[![Dev Dependencies](https://david-dm.org/ebb-framework/ebb-core/dev-status.svg)](https://david-dm.org/ebb-framework/ebb-core#info=devDependencies)
+[![Stats](https://nodei.co/npm/ebb-core.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.com/package/ebb-core)
+[![Downloads](https://nodei.co/npm-dl/ebb-core.png?height=2)](https://npmjs.com/package/ebb-core)
+
 
 The ebb project is a messaging framework that allows for handling of streams of
 varied message types. The framework can be extended with new serialization formats
