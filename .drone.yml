@@ -11,6 +11,7 @@ pipeline:
     image: node:${NODE_VERSION}
     environment:
       - NPM_CONFIG_LOGLEVEL=silent
+      - NPM_CONFIG_REGISTRY=http://nexus.eventualconsistency.net/content/repositories/npm-mirror/
       - NSL_LEVEL=5
     commands:
       - npm install
@@ -30,7 +31,6 @@ pipeline:
     when:
       matrix:
         NODE_VERSION: 6
-
 
   apply_npm_version:
     image: node:${NODE_VERSION}
