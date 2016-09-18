@@ -14,7 +14,6 @@ import ConsumerBase from '../ConsumerBase';
  */
 export default class KafkaConsumer extends ConsumerBase {
   consumer : GroupConsumer | null;
-  formatter : EbbFormatter;
   options : KafkaConsumerOptions;
   running : boolean;
 
@@ -24,8 +23,7 @@ export default class KafkaConsumer extends ConsumerBase {
   constructor(
     formatter : EbbFormatter,
     options : KafkaConsumerOptions) {
-    super();
-    this.formatter = formatter;
+    super(formatter);
     this.options = options;
   }
 
