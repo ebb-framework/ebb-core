@@ -6,6 +6,7 @@ import KafkaTools from 'kafka-tools';
 // Internal
 import KafkaConsumer from '../../../../src/transports/kafka/Consumer';
 import KafkaProducer from '../../../../src/transports/kafka/Producer';
+import sleep from '../../../../src/utilities/Sleep';
 
 // Globals
 const brokerConnectionString = 'localhost:9092';
@@ -31,6 +32,7 @@ export default function generate(
         });
       });
       kafkaTools.close();
+      await sleep(500);
 
       producer = new KafkaProducer(
         formatter,
